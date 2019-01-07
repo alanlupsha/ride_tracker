@@ -20,8 +20,9 @@ public class RideRepositoryImpl implements RideRepository {
     @Override
     public Ride createRide(Ride ride) {
 
-        // jdbcTemplate.update("insert into ride (name,duration) values (?,?) ", ride.getName(), ride.getDuration());
+        jdbcTemplate.update("insert into ride (name,duration) values (?,?) ", ride.getName(), ride.getDuration());
 
+/*
         SimpleJdbcInsert insert = new SimpleJdbcInsert(jdbcTemplate);
 
         List<String> columns = new ArrayList<>();
@@ -40,6 +41,7 @@ public class RideRepositoryImpl implements RideRepository {
         Number key = insert.executeAndReturnKey(data);
 
         System.out.printf("key is: " + key);
+*/
 
         return null;
     }
